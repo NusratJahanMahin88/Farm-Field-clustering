@@ -27,6 +27,26 @@ METRICS = {"silhouette": "Silhouette (higher is better)",
            "min_cluster_share": "Smallest cluster share",
            "nmi_crop_group": "NMI with crop group (interpretation only)",
            "cost": "Within-cluster sum of squares"}
+# plain-language explanations (added after the usability test)
+METRIC_HELP = {
+    "silhouette": "How clearly the fields are separated into groups. Values go from −1 to 1: "
+                  "higher means each field is closer to its own group than to other groups.",
+    "davies_bouldin": "How much the groups overlap. Lower is better: 0 would mean compact groups "
+                      "that are far apart from each other.",
+    "stability_ari": "Whether the same groups appear when the algorithm is run again with a different "
+                     "random start. 1 means exactly the same groups every time.",
+    "min_cluster_share": "The size of the smallest group as a share of all fields. Very small groups "
+                         "are harder to interpret, so the selection rule required at least 2%.",
+    "nmi_crop_group": "How closely the groups match the crop types (0 = not at all, 1 = exactly). "
+                      "Used to understand the groups, not to choose the best result.",
+    "cost": "The total distance between fields and the centre of their group. It always falls as k "
+            "increases, so it is not used on its own to choose k."}
+LABEL_HELP = ("**What do the labels mean?** "
+              "**Pesticide benchmark** is the national average pesticide use for the field's crop group "
+              "(Miljøstyrelsen), not what was sprayed on that field. "
+              "**Moisture stress** compares the plant-water indicator (NDWI) in the field's greenest month "
+              "with all 13,510 fields: it is an indicator, not a measured value. "
+              "Low, medium and high are relative to the fields in this study.")
 
 
 # ---------------------------------------------------------------- load the results (only once, then cached)
@@ -92,6 +112,9 @@ with tab_map:
     col2.metric("Area", f"{fields['area_ha'].sum():,.0f} ha")
     col3.metric("Clusters (k)", fields[cluster_column].nunique())
 
+    st.info("**How to use the map:** move the mouse slowly over a coloured field to see its ID, cluster and labels. "
+            "If no box appears near the top of the map, drag the map down a little, or type a field ID in the "
+            "Field lookup tab.")
     layer = pdk.Layer("GeoJsonLayer", map_geojson(algorithm, colour_by),
                       pickable=True, filled=True, get_fill_color="properties.colour")
     view = pdk.ViewState(latitude=56.0, longitude=8.45, zoom=9)
@@ -104,8 +127,7 @@ with tab_map:
         st.caption(" · ".join(f"{CLUSTER_NAMES[c]} = Cluster {c}" for c in range(n_clusters)))
     else:
         st.caption("Blue = low · Yellow = medium · Red = high (relative labels, see the About tab)")
-    st.caption("Tip: move the mouse over a field to see its ID. If no tooltip appears near the top of the map, "
-               "zoom or drag the map a little, or use the Field lookup tab.")
+    st.info(LABEL_HELP)
 
 # ---------------------------------------------------------------- tab 2: cluster profiles
 with tab_profiles:
@@ -120,6 +142,7 @@ with tab_profiles:
     table["Area (ha)"] = table["Area (ha)"].round(0).astype(int)
     table["Main crop groups"] = table["Main crop groups"].str.replace("_", " ")
     st.dataframe(table.round(3), hide_index=True)
+    st.info(LABEL_HELP)
     st.caption("Pesticide benchmark: cluster mean BI/ha compared with the national average of 3.99 "
                "(low below half, high above 1.5 times). Moisture stress and vegetation vigour: compared with the "
                "33.3rd and 66.7th percentiles of all 13,510 fields (lower NDWI at peak = higher moisture stress).")
@@ -137,6 +160,7 @@ with tab_profiles:
 # ---------------------------------------------------------------- tab 3: algorithm comparison
 with tab_compare:
     metric = st.selectbox("Metric", list(METRICS.keys()), format_func=lambda m: METRICS[m])
+    st.info("**What does this measure show?** " + METRIC_HELP[metric])
     chart = summary.pivot(index="k", columns="algorithm", values=metric).rename(columns=ALGORITHMS)
     st.line_chart(chart)
     st.caption("Values are means across the three random seeds (11, 22 and 33). Selected: K-means k = "
