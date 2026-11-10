@@ -1,0 +1,12 @@
+{
+  "full": {
+    "kmeans": {
+      "k": 4,
+      "rule": "stability_ari >= 0.8 and min_cluster_share >= 0.02, then highest silhouette"
+    },
+    "bisecting_kmeans": {
+      "k": 2,
+      "rule": "stability_ari >= 0.8 and min_cluster_share >= 0.02, then highest silhouette"
+    }
+  }
+}

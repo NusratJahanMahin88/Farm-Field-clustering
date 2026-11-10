@@ -1,0 +1,18 @@
+crop_group,report_category,report_category_da,bi_per_ha,load_per_ha,source
+winter_cereals,"Cereals, winter","Korn, Vintersæd",3.97,2.46,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+spring_cereals,"Cereals, spring","Korn, Vårsæd",2.66,0.83,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+rapeseed,Rapeseed,Raps,4.43,2.81,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+grass_seed,Other seed crops,Andre frø,3.71,1.89,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+potatoes,Potatoes,Kartofler,22.82,8.17,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+sugar_beet,Beets,Roer,4.76,3.05,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+other_beet,Beets,Roer,4.76,3.05,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+pulses,Legumes,Bælgsæd,2.51,3.01,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+maize,Maize,Majs,1.61,0.65,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+vegetables,Vegetables,Grøntsager,4.66,5.40,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+grass_clover_rotation,Grass & clover,Græs og kløver,0.02,0.02,"Miljøstyrelsen (2026) Bilag 6 p.126: Behandlingshyppighed I alt (BI pr. ha) and Fladebelastning I alt (B pr. ha), forbrugstal 1 Aug 2023-31 Jul 2024; verified against official PDF"
+permanent_grass,Grass & clover,Græs og kløver,0.02,0.02,ASSUMPTION: report has no permanent-grass column; Grass & clover value used. Delete the numbers to exclude these fields instead
+set_aside,,,,,No figures in the report (excluded)
+christmas_trees,,,,,No key figures in the report (excluded)
+fruit_berries,,,,,No key figures in the report (excluded)
+forest_other_woody,,,,,No figures in the report (excluded)
+other_non_crop,,,,,"Not a farmed crop (nature, recreation, nursery): excluded"

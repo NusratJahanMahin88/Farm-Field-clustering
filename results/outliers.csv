@@ -1,0 +1,7 @@
+Feature,Outliers,Percent
+ndvi_median,0,0.0
+ndvi_peak,412,3.0
+ndwi_median,9,0.1
+ndwi_at_peak,219,1.6
+bi_per_ha,628,4.6
+load_per_ha,2643,19.6

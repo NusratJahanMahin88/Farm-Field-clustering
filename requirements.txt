@@ -1,0 +1,20 @@
+# Streamlit app (app.py)
+# Quick install for the app only:  pip install streamlit pydeck geopandas pandas pyarrow
+streamlit
+pydeck
+pyarrow
+
+# Shared by the app and the notebook - versions used in the final Kaggle run
+pandas==2.3.3
+geopandas==1.1.4
+
+# Notebook only (thesis-fyp.ipynb)
+pyspark==3.5.3
+setuptools
+pyogrio
+numpy
+scikit-learn
+matplotlib
+seaborn
+earthengine-api
+ipykernel

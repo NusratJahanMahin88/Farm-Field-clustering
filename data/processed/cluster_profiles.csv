@@ -1,0 +1,7 @@
+﻿algorithm,cluster,ndvi_median,ndvi_peak,ndwi_median,ndwi_at_peak,bi_per_ha,load_per_ha,ndwi_min,n_fields,share_of_fields,area_ha,top_crop_groups,pesticide_label,moisture_stress_label,vigour_label
+kmeans,0,0.5941,0.7662,0.1127,0.2996,2.0272,0.979,-0.0956,2964,0.2194,17368.8612,"spring_cereals 27%, winter_cereals 22%, maize 18%",medium,high,low
+kmeans,1,0.7866,0.8697,0.3188,0.4337,0.9734,0.5267,0.0872,5980,0.4426,30088.6563,"grass_clover_rotation 35%, permanent_grass 34%, winter_cereals 7%",low,medium,medium
+kmeans,2,0.4615,0.8759,0.0071,0.4817,2.6165,1.0499,-0.2101,3941,0.2917,30374.145,"spring_cereals 69%, maize 17%, winter_cereals 7%",medium,low,medium
+kmeans,3,0.5919,0.8838,0.1054,0.4502,22.82,8.17,-0.2542,625,0.0463,5380.7496,potatoes 100%,high,medium,high
+bisecting_kmeans,0,0.4863,0.8381,0.0228,0.4207,4.1564,1.6582,-0.2013,6299,0.4662,46128.1764,"spring_cereals 54%, maize 18%, winter_cereals 14%",medium,medium,medium
+bisecting_kmeans,1,0.7753,0.8594,0.3037,0.4176,1.4176,0.6727,0.0719,7211,0.5338,37084.2357,"permanent_grass 34%, grass_clover_rotation 33%, spring_cereals 8%",low,medium,medium
